@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -91,7 +96,6 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
-            'throttle' => 60,
         ],
     ],
 
@@ -105,7 +109,5 @@ return [
     | confirmation screen. By default, the timeout lasts for three hours.
     |
     */
-
-    'password_timeout' => 10800,
 
 ];
