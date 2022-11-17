@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AdvisorPost extends Model
+class AgentPost extends Model
 {
-    public function advisor()
+    public function agent()
     {
-        return $this->belongsTo(RegisterAdvisor::class, 'advisor_id_fk',  'id');
+        return $this->belongsTo(RegisterAgent::class, 'agent_id_fk',  'id');
     }
 }

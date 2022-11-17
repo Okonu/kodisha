@@ -13,7 +13,7 @@ class RegisterAgent extends Model
 
     public function post()
     {
-        return $this->hasMany(AgentPost::class, 'advisor_id_fk', 'id');
+        return $this->hasMany(AgentPost::class, 'agent_id_fk', 'id');
     }
 
     public function user()
