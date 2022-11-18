@@ -28,4 +28,24 @@ class UserTableSeeder extends Seeder
         $user->role_id_fk = 1;
         $user->save();
     }
+
+    public function tenant()
+    {
+        $user = new User;
+        $user->email = 'tenant@gmail.com';
+        $user->password = bcrypt(value: 'a');
+        $user->profile_img = 'this.png';
+        $user->role_id_fk = 2;
+        $user->save();
+    }
+
+    public function agent()
+    {
+        $user = new User;
+        $user->email = 'agent@gmail.com';
+        $user->password = bcrypt('a');
+        $user->profile_img = 'this.png';
+        $user->role_id_fk = 3;
+        $user->save();
+    }
 }
