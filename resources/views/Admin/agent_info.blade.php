@@ -40,8 +40,8 @@
             <ul>
                 <li><a href="{{route('admin_dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
                 <li><a href="{{route('tenet_info')}}"><i class="fa fa-info"></i> Tenant Info</a></li>
-                <li class="active"><a href="{{route('advisor_info')}}"><i class="fa fa-info"></i> Advisor Info</a></li>
-                <li><a href="{{route('advisor_upgrade')}}"><i class="fa fa-thumbs-up"></i> Advisor Upgradation</a></li>
+                <li class="active"><a href="{{route('agent_info')}}"><i class="fa fa-info"></i> Agent Info</a></li>
+                <li><a href="{{route('agent_upgrade')}}"><i class="fa fa-thumbs-up"></i> Agent Upgradation</a></li>
                 <li><a href="{{route('admin_profile')}}"><i class="fa fa-user"></i> Profile</a></li>
                 <li><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i> Logout</a></li>
             </ul>
@@ -57,9 +57,9 @@
                     <ul>
                         <li class="nav-settings">
                             @php
-                            $count = \App\RegisterAdvisor::all()->where('is_recived','=',1)->where('is_upgrated','=',0)->count();
+                            $count = \App\RegisterAgent::all()->where('is_recived','=',1)->where('is_upgrated','=',0)->count();
                             @endphp
-                            <a href="{{route('advisor_upgrade')}}">
+                            <a href="{{route('agent_upgrade')}}">
                                 <div title="Notification" class="font-icon"><i class="fa fa-bell-o" aria-hidden="true"></i><span style="float: left; margin-right: 5px; margin-top: 3px;" class="badge badge-light">{{$count}}</span></div>
                             </a>
                         </li>
@@ -85,17 +85,17 @@
                     @php
                     $counter = 0;
                     @endphp
-                    @foreach(App\User::all()->where('role_id_fk','=',3) as $advisor)
+                    @foreach(App\User::all()->where('role_id_fk','=',3) as $agent)
                     <tr>
                         <th scope="row">{{++$counter}}</th>
-                        <td>{{$advisor->email}}</td>
-                        <td>{{$advisor->advisorrelation->first_name}}</td>
-                        <td>{{$advisor->advisorrelation->last_name}}</td>
-                        <td>{{$advisor->advisorrelation->phone}}</td>
-                        <td>{{$advisor->advisorrelation->ntn}}</td>
-                        <td>{{$advisor->advisorrelation->brand}}</td>
+                        <td>{{$agent->email}}</td>
+                        <td>{{$agent->agentrelation->first_name}}</td>
+                        <td>{{$agent->agentrelation->last_name}}</td>
+                        <td>{{$agent->agentrelation->phone}}</td>
+                        <td>{{$agent->agentrelation->ntn}}</td>
+                        <td>{{$agent->agentrelation->brand}}</td>
                         <td>
-                            <form action="{{route('admin_advisor_handler.destroy',[$advisor->id])}}" method="post">
+                            <form action="{{route('admin_agent_handler.destroy',[$agent->id])}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input style="background-color:black;color:white; border-style:none;cursor: pointer;" type="submit" value="Delete">
