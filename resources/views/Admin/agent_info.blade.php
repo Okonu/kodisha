@@ -39,7 +39,7 @@
             </div>
             <ul>
                 <li><a href="{{route('admin_dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a></li>
-                <li><a href="{{route('tenet_info')}}"><i class="fa fa-info"></i> Tenant Info</a></li>
+                <li><a href="{{route('tenant_info')}}"><i class="fa fa-info"></i> Tenant Info</a></li>
                 <li class="active"><a href="{{route('agent_info')}}"><i class="fa fa-info"></i> Agent Info</a></li>
                 <li><a href="{{route('agent_upgrade')}}"><i class="fa fa-thumbs-up"></i> Agent Upgradation</a></li>
                 <li><a href="{{route('admin_profile')}}"><i class="fa fa-user"></i> Profile</a></li>
