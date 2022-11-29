@@ -72,7 +72,7 @@
             box-sizing: border-box;
             font-family: montserrat;
             color: #2c3e50;
-            font-size: 13px;
+            font-size: 15px;
 
         }
     </style>
